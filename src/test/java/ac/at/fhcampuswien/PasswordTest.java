@@ -23,8 +23,15 @@ public class PasswordTest {
     @Test
     @DisplayName("does password contains numbers")
     public void passwordWithNumbersTest(){
-        Password p = new Password("3445456456");
+        Password p = new Password("345435435");
         boolean actual = p.passwordWithNumbers();
+        assertTrue(actual);
+    }
+    @Test
+    @DisplayName("does password contains at least one symbol ()#$?!%/@")
+    public void passwordWithSymbolTest(){
+        Password p = new Password("#ensdk");
+        boolean actual = p.passwordWithSymbol();
         assertTrue(actual);
     }
 

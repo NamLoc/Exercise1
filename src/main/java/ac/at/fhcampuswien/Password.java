@@ -27,6 +27,19 @@ public class Password {
         }
         return false;
     }
+    public boolean passwordWithNumbers(){
+        boolean passWithNumbers = false;
+
+        for(int i = 0; i < password.length(); i++){
+            if(password.matches(".\\d+.")){
+                passWithNumbers = true;
+            }
+            if(passWithNumbers){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
