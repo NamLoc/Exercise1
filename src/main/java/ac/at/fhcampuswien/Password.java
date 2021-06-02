@@ -8,6 +8,7 @@ public class Password {
     }
     public boolean lengthOfPassword(){
         return password.length() >= 8 && password.length() <= 25;
+
     }
 
     public boolean passwordWithUpAndLow(){
@@ -39,6 +40,10 @@ public class Password {
             }
         }
         return false;
+    }
+
+    public boolean passwordWithSymbol(){
+        return (password.matches(".*[()#$?!%/@].*"));
     }
 
 

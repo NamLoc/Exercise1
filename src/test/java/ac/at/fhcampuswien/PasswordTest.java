@@ -30,10 +30,19 @@ public class PasswordTest {
     @Test
     @DisplayName("does password contains at least one symbol ()#$?!%/@")
     public void passwordWithSymbolTest(){
-        Password p = new Password("#ensdk");
+        Password p = new Password("#sdfs#df()sf");
         boolean actual = p.passwordWithSymbol();
         assertTrue(actual);
     }
+
+    @Test
+    @DisplayName("More than two numbers (right after) not allowed")
+    public void notMoreThan2NumTest(){
+        Password p = new Password("7g53abc12");
+        boolean actual = p.notMoreThan2Num();
+        assertTrue(actual);
+    }
+
 
 
 }
