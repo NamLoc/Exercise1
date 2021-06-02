@@ -46,6 +46,25 @@ public class Password {
         return (password.matches(".*[()#$?!%/@].*"));
     }
 
+    public boolean notMoreThan2Num(){
+        int count = 0;
+        char previous = password.charAt(0);
+
+        for(int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isDigit(c)) {
+                if (previous + 1 == c) {
+                    count++;
+                }
+                if (count >= 3) {                           //for example 123 -> false
+                    return false;
+                }
+                previous = c;
+            }
+        }
+        return true;
+    }
+
 
 
 }
